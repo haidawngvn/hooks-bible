@@ -1,0 +1,57 @@
+import  {  useContext } from 'react'
+import Content6 from './Content6'
+import './App.css'
+import { ThemeProvider, ThemeContext} from './ThemeContext'
+
+
+// use context
+// truyển dữ liệu từ component cha xuống con mà kh cần dùng props
+// CompA => CompB => CompC 
+
+// 3 bước khi xài useContext
+// 1. create context (tạo context từ A thì có thể chuyển từ A tới B hoặc C,D....)
+//    CompA => CompB => CompC 
+// 2. provider (thằng cung cấp dữ liệu)
+// 3. consumer (thằng nhận dữ liệu)
+
+// 1. create context (tạo context từ A thì có thể chuyển từ A tới B hoặc C,D....)
+// export const ThemeContext = createContext()
+// createContext() sẽ trả về 1 object có chứa 2 react component là provider, consumer
+
+
+function App() {
+
+    // const [theme, setTheme] = useState('dark') 
+
+    // const toggleTheme = () => {
+    //     setTheme(theme === 'dark' ? 'light' : 'dark')
+
+    // }
+
+    {/* 2. provider (thằng cung cấp dữ liệu) */}
+    // return (
+    //     <ThemeContext.Provider value={theme}>
+    //         <div>
+    //             <button>
+    //                 Toggle theme
+    //             </button>
+    //             <Content6/>
+    //         </div>
+    //     </ThemeContext.Provider>
+    // )
+
+    const context= useContext(ThemeContext)
+
+    return (
+        <ThemeProvider>
+            <div>
+                <button onClick={context.toggleTheme}>
+                    Toggle theme
+                </button>
+                <Content6/>
+            </div>
+        </ThemeProvider>
+    )
+}
+
+export default App

@@ -65,8 +65,6 @@ function Content() {
     //         })
     // }, [type])
 
-
-    // Cleanup func
     // useEffect(() => {
 
     //     const handleScroll = () => {

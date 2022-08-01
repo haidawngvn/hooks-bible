@@ -11,10 +11,15 @@ function UseState() {
     // khi setCounter thì react sẽ gọi lại component App này
     // ====> Component sẽ re-render sau khi setState
     
-    // setCounter(counter + 1)
+    setCounter(counter + 1)
+    console.log(counter);
+    setCounter(counter + 1)
+    console.log(counter);
+    setCounter(counter + 1)
+    console.log(counter);
     // khi gọi 3 lần như này, counter vẫn chỉ +1 sau khi bấm increase
     
-    setCounter(prevState => prevState +1)
+    // setCounter(prevState => prevState +1)
     // khi gọi 3 lần như này, counter cộng +3 sau khi bấm increase
   }
 

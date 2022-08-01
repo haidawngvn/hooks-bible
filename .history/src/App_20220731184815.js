@@ -1,9 +1,9 @@
-import UseState from './useState'
+import App from './useState'
 
 function App() {
     return (
         <div>
-            <UseState/>
+            <App/>
         </div>
     )
 }
